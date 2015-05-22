@@ -1,0 +1,7 @@
+
+{
+    "access_token"    :"1a116d53dfe037cedbc5b9c19d173d38afc8435a"
+    , "client_id"     :"Your apps Client ID (Required for oauth)"
+    , "client_secret" :"Your apps Client Secret (Required for oauth)"
+    , "redirect_uri"  :"http://www.paessefahrt.de"
+}

@@ -1,0 +1,41 @@
+/*  style container  */
+
+body {
+    font-family: "TypoPRO Open Sans";
+    font-size: small;
+}
+
+.strava {
+    padding: 10px;
+    border: 1px solid;
+    font-family: "TypoPRO Open Sans";
+}
+
+.strava .row-0 {
+    background-color: #f0f0f0;
+}
+.strava .row-1 {
+    background-color: inherit;
+}
+
+.strava td {
+    padding: 0px 5px;
+}
+
+.hello {
+    padding: 10px;
+    border: 1px solid blue;
+    font-family: "TypoPRO Open Sans";
+}
+
+/*  style message  */
+.hello .message {
+    color: blue;
+}
+.hello .message.row-0 {
+    background-color: #f0f0f0;
+}
+.hello .message.row-1 {
+    background-color: inherit;
+}
+

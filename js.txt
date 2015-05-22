@@ -1,0 +1,83 @@
+
+Literatur:
+=========
+
+- JavaScript - Pocket Reference (durchschauen)
+- JavaScript - The Good Parts (lesen)
+- JavaScript - The Definitive Guide (nicht lesen)
+- es6-features.org (in Detail im TechINSIGHT, ES5 -> ES6 Upgrade)
+
+Tools
+=====
+
+- IDE: WebStorm 10
+
+- Shell: CygWin + ConEmu (als Alternative zu MinTTY) + TMux + Bash
+  Shell: CMD.exe
+  Node/IO.js
+  NPM
+  Grunt 
+  ...
+
+  Bash: CTRL+a: Anfang springen
+        CTRL+e: Ende springen
+        CTRL+r: Suchen
+        CURSOR
+  TMUX: CTRL+a + ?: Hilfe für Keystrokes
+  ConEmu: CTRL+t: Tab aufmachen
+
+Libraries
+=========
+
+npmjs.org: Node-spezifisch (Server)
+
+    $ npm install -g grunt
+    $ grunt ...
+
+    $ npm install grunt
+    $ ./node_modules/.bin/grunt ...
+
+Client-spezifisch:
+http://rse.github.io/html5-spa-essentials/
+
+   $ npm install -g bower
+   $ bower install jquery
+   ./bower_components/query/dist/jquery.js
+
+   Schritt 1
+   ---------
+
+   Single-Page-App erzeugt Maske
+ 
+   - jQuery = $
+     $(...).xxx
+     DOM Manipulation (+ AJAX + ..)
+
+   - jQuery-Markup
+     wie kommt HTML Snippets in den DOM
+
+   - TypoPRO
+     Font... z.B. Open Sans
+
+   Schritt 2
+   ---------
+
+   Base-Styling
+
+   - Twitter Bootstrap
+     (Widget Styling)
+
+   - LESS
+     CSS Makroprozessor, wie kommt CSS in den DOM bequem
+
+   Schritt 3:
+   ---------
+
+   Architektur
+
+   - ComponentJS
+   - ECMAScript 6
+   - ...
+
+Modulkonzept:
+https://github.com/rse/oset/blob/master/Gruntfile.js
