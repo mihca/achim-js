@@ -37,11 +37,17 @@ function calYear (saison, showTable) {
         //$(h).markup("strava/head", { head: ['Entfernung'] })
 
         var sum = {}
+        var notBefore = new Date((saison-1)+'-11-20');
+        var notAfter = new Date(saison + '-' + (new Date().getMonth()+1) + '-' + new Date().getDate());
+
+        $(h).markup("strava/range", {
+            range_from: notBefore.toLocaleDateString(),
+            range_to: notAfter.toLocaleDateString()
+        })
+
         for (var i = 0; i < data.length; i++) {
 
-            var notAfter = new Date(saison + '-' + (new Date().getMonth()+1) + '-' + new Date().getDate());
             var activityDate = new Date(data[i].start_date_local.substring(0,10));
-
             if (activityDate < notAfter) {
                 if (showTable) {
                     $(h).markup("strava/row", {

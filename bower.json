@@ -6,7 +6,6 @@
         "jquery":        "latest",
         "jquery-markup": "latest",
         "jquery-number": "latest",
-        "requirejs":     "latest",
         "typopro":       "latest",
         "bootstrap":     "latest"
     },
