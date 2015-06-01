@@ -11,7 +11,7 @@
     </div>
 </markup>
 
-<markup id="strava">
+<markup id="table">
     <div class="strava">
         Strava: <markup id="range">{{range_from}} - {{range_to}}</markup><br/>
 
@@ -44,4 +44,13 @@
         </table>
 
     </div>
+</markup>
+
+<markup id="chart">
+    <google-chart
+            type='line'
+            options='{"title": "Strava"}'
+            cols='[{"label":"Month", "type":"string"}, {"label":"Days", "type":"number"}]'
+            rows='[["Jan", 31],["Feb", 28],["Mar", 31]]'>
+    </google-chart>
 </markup>

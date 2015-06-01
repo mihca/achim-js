@@ -14,17 +14,23 @@ import StravaSeason from "./season"
             /*  insert ten message markups  */
             for (var i = 0; i < 3; i++) {
                 $(h).markup("hello/message", {
-                    i: i, k: i % 2,
+                    i: i,
+                    k: i % 2,
                     message: "Hello World"
                 });
             }
 
+            var stravaSeason = new StravaSeason();
+            stravaSeason.calYear(2013, false);
+            stravaSeason.calYear(2014, false);
+            stravaSeason.calYear(2015, false);
+
+            var h2 = $("body").markup("chart");
+            $(h2).markup("chart", {
+                options: '{"title": "Strava"}'
+            });
         });
 
-        var stravaSeason = new StravaSeason();
-        stravaSeason.calYear(2013, false);
-        stravaSeason.calYear(2014, false);
-        stravaSeason.calYear(2015, false);
     });
 })(jQuery);
 

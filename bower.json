@@ -1,17 +1,18 @@
 {
-    "name": "sample",
-    "version": "0.0.0",
-    "description": "Sample",
-    "dependencies": {
-        "jquery":        "latest",
-        "jquery-markup": "latest",
-        "jquery-number": "latest",
-        "typopro":       "latest",
-        "bootstrap":     "latest"
-    },
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components"
-    ]
+  "name": "sample",
+  "version": "0.0.0",
+  "description": "Sample",
+  "dependencies": {
+    "jquery": "latest",
+    "jquery-markup": "latest",
+    "jquery-number": "latest",
+    "typopro": "latest",
+    "bootstrap": "latest",
+    "google-chart": "GoogleWebComponents/google-chart#master"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ]
 }
