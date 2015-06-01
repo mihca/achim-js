@@ -15,11 +15,12 @@ module.exports = function (grunt) {
             "main": [ "**/*.js" ]
         },
         browserify: {
-            "main": {
-                src: "main.js",
-                dest: "build/main.js",
+            dist: {
+                files: {
+                    'build/app.js': ['main.js', 'season.js']
+                },
                 options: {
-                    transform: [ "babelify" ]
+                    transform: ['babelify']
                 }
             }
         },

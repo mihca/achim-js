@@ -2,9 +2,9 @@
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var _stravaSaison = require("strava-saison");
+var _season = require("./season");
 
-var _stravaSaison2 = _interopRequireDefault(_stravaSaison);
+var _season2 = _interopRequireDefault(_season);
 
 (function ($) {
     /*  once the DOM (and its <link> tags) is ready...  */
@@ -26,7 +26,7 @@ var _stravaSaison2 = _interopRequireDefault(_stravaSaison);
             }
         });
 
-        var stravaSeason = new _stravaSaison2["default"]();
+        var stravaSeason = new _season2["default"]();
         stravaSeason.calYear(2013, false);
         stravaSeason.calYear(2014, false);
         stravaSeason.calYear(2015, false);

@@ -1,4 +1,4 @@
-import StravaSeason from "strava-saison"
+import StravaSeason from "./season"
 
 (function ($) {
     /*  once the DOM (and its <link> tags) is ready...  */
