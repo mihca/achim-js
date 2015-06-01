@@ -1,3 +1,4 @@
+"use strict";
 
 module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-contrib-clean");
@@ -11,24 +12,24 @@ module.exports = function (grunt) {
             options: {
                 jshintrc: "jshint.json"
             },
-            "gruntfile":  [ "Gruntfile.js" ],
-            "main": [ "**/*.js" ]
+            "gruntfile": ["Gruntfile.js"],
+            "main": ["**/*.js"]
         },
         browserify: {
             "main": {
                 src: "main.js",
                 dest: "build/main.js",
                 options: {
-                    transform: [ "babelify" ]
+                    transform: ["babelify"]
                 }
             }
         },
         "bower-install-simple": {
             "sample": {
                 options: {
-                    color:       true,
-                    production:  true,
-                    directory:   "bower_components"
+                    color: true,
+                    production: true,
+                    directory: "bower_components"
                 }
             }
         },
@@ -42,12 +43,13 @@ module.exports = function (grunt) {
         },
         clean: {
             "clean": {
-                src: [ "node_modules", "bower_components" ]
+                src: ["node_modules", "bower_components"]
             }
         }
     });
 
-    grunt.registerTask("default", [ "bower-install-simple", "browserify" ]);
-    grunt.registerTask("server", [ "connect:sample:keepalive" ]);
+    grunt.registerTask("default", ["bower-install-simple", "browserify"]);
+    grunt.registerTask("server", ["connect:sample:keepalive"]);
 };
 
+//# sourceMappingURL=Gruntfile-compiled.js.map
