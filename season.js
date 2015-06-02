@@ -17,7 +17,8 @@ class StravaSeason {
 
           var sum = {}
           var notBefore = new Date((saison - 1) + '-11-20');
-          var notAfter = new Date(saison + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate());
+          // var notAfter = new Date(saison + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate());
+          var notAfter = new Date(saison + '-07-13');
 
           $(h).markup("table/range", {
               range_from: notBefore.toLocaleDateString(),
