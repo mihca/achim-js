@@ -15,7 +15,7 @@ class StravaSeason {
           //$(h).markup("strava/head", { head: ['Typ'] })
           //$(h).markup("strava/head", { head: ['Entfernung'] })
 
-          var sum = {}
+          var sum = {};
           var notBefore = new Date((saison - 1) + '-11-20');
           // var notAfter = new Date(saison + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate());
           var notAfter = new Date(saison + '-07-13');
@@ -71,6 +71,12 @@ class StravaSeason {
               type: 'Run',
               distance: $.number(sum['Run'], 1, ',', '')
           })
+
+          for (var property in sum) {
+              if (sum.hasOwnProperty(property)) {
+                  sum[property] = Math.round(sum[property]*10)/10;
+              }
+          }
 
           resolve (sum);
       });

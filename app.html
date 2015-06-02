@@ -49,8 +49,8 @@
 <markup id="chart">
     <div class="chart">
         <google-chart
-            type='line'
-            options='{"title": "{{title}}"}'
+            type='{{chart_type}}'
+            options='{"title": "{{title}}", "width": "500"}'
             data='{{chart_data}}'>
         </google-chart>
     </div>

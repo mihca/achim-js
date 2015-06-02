@@ -36,6 +36,12 @@ import StravaSeason from "./season"
                 let [ sum2013, sum2014, sum2015 ] = data
                 $("body").markup("chart", {
                     title: "Disciplines",
+                    chart_type: 'line',
+                    chart_data: '[["Year", "km Swim", "km Bike", "km Run"], ["2013", '+sum2013['Swim']+', '+sum2013['Ride']+','+sum2013['Run']+'], ["2014", '+sum2014['Swim']+', '+sum2014['Ride']+','+sum2014['Run']+'], ["2015", '+sum2015['Swim']+', '+sum2015['Ride']+','+sum2015['Run']+']]'
+                });
+                $("body").markup("chart", {
+                    title: "Disciplines",
+                    chart_type: 'bar',
                     chart_data: '[["Year", "km Swim", "km Bike", "km Run"], ["2013", '+sum2013['Swim']+', '+sum2013['Ride']+','+sum2013['Run']+'], ["2014", '+sum2014['Swim']+', '+sum2014['Ride']+','+sum2014['Run']+'], ["2015", '+sum2015['Swim']+', '+sum2015['Ride']+','+sum2015['Run']+']]'
                 });
             }, (err) => {
