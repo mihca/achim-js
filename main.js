@@ -21,14 +21,26 @@ import StravaSeason from "./season"
             }
 
             var stravaSeason = new StravaSeason();
-            stravaSeason.calYear(2013, false);
-            stravaSeason.calYear(2014, false);
-            stravaSeason.calYear(2015, false);
 
-            var h2 = $("body").markup("chart");
-            $(h2).markup("chart", {
-                options: '{"title": "Strava"}'
-            });
+            let fetchPromised = (year, details) => {
+                return new Promise((resolve, reject) => {
+                    stravaSeason.calYear(year, details, resolve, reject)
+                })
+            }
+
+            Promise.all([
+                fetchPromised(2013, true),
+                fetchPromised(2014, true),
+                fetchPromised(2015, true)
+            ]).then((data) => {
+                let [ sum2013, sum2014, sum2015 ] = data
+                $("body").markup("chart", {
+                    title: "Disciplines",
+                    chart_data: '[["Year", "km Swim", "km Bike", "km Run"], ["2013", '+sum2013['Swim']+', '+sum2013['Ride']+','+sum2013['Run']+'], ["2014", '+sum2014['Swim']+', '+sum2014['Ride']+','+sum2014['Run']+'], ["2015", '+sum2015['Swim']+', '+sum2015['Ride']+','+sum2015['Run']+']]'
+                });
+            }, (err) => {
+                console.log('error: ${err}')
+            })
         });
 
     });

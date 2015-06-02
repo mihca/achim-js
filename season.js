@@ -4,7 +4,7 @@ class StravaSeason {
       this.name = 'Season Wrapper';
   }
 
-  calYear (saison, showTable) {
+  calYear (saison, showTable, resolve, reject) {
 
       $.ajax({
           url: "https://www.strava.com/api/v3/activities?access_token=1a116d53dfe037cedbc5b9c19d173d38afc8435a&per_page=200&after=" + new Date((saison - 1) + '-11-20').getTime() / 1000,
@@ -35,7 +35,8 @@ class StravaSeason {
                           title: data[i].name,
                           date: data[i].start_date_local.substring(0, 10),
                           type: data[i].type,
-                          distance: $.number(data[i].distance / 1000, 1, ',', '')
+                          distance: $.number(data[i].distance / 1000, 1, ',', ''),
+                          link: "https://www.strava.com/activities/"+data[i].id
                       })
                   }
                   if (isNaN(sum[data[i].type]))
@@ -69,6 +70,8 @@ class StravaSeason {
               type: 'Run',
               distance: $.number(sum['Run'], 1, ',', '')
           })
+
+          resolve (sum);
       });
   }
 }

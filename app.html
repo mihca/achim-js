@@ -27,7 +27,7 @@
                 <markup id="row">
                     <tr class="row-{{k}}">
                         <td>
-                            {{i}}. {{title}}
+                            <a href="{{link}}" target="_blank">{{i}}. {{title}}</a>
                         </td>
                         <td>
                             {{date}}
@@ -47,10 +47,11 @@
 </markup>
 
 <markup id="chart">
-    <google-chart
+    <div class="chart">
+        <google-chart
             type='line'
-            options='{"title": "Strava"}'
-            cols='[{"label":"Month", "type":"string"}, {"label":"Days", "type":"number"}]'
-            rows='[["Jan", 31],["Feb", 28],["Mar", 31]]'>
-    </google-chart>
+            options='{"title": "{{title}}"}'
+            data='{{chart_data}}'>
+        </google-chart>
+    </div>
 </markup>
