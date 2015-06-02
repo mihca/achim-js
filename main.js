@@ -1,24 +1,26 @@
 import StravaSeason from "./season"
 
 (function ($) {
+
+    String.prototype.toHHMMSS = function () {
+        var sec_num = parseInt(this, 10); // don't forget the second param
+        var hours   = Math.floor(sec_num / 3600);
+        var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+        var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+        if (hours   < 10) {hours   = "0"+hours;}
+        if (minutes < 10) {minutes = "0"+minutes;}
+        if (seconds < 10) {seconds = "0"+seconds;}
+        var time    = hours+':'+minutes;
+        return time;
+    }
+
     /*  once the DOM (and its <link> tags) is ready...  */
     $(document).ready(function () {
 
         /*  once jQuery.Markup has loaded the markup templates...  */
         $.markup.debug = 4;
         $.markup.load(function () {
-
-            /*
-            var h = $("body").markup("hello");
-
-            for (var i = 0; i < 3; i++) {
-                $(h).markup("hello/message", {
-                    i: i,
-                    k: i % 2,
-                    message: "Hello World"
-                });
-            }
-            */
 
             var stravaSeason = new StravaSeason();
 

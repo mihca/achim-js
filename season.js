@@ -28,10 +28,11 @@ export default class StravaSeason {
                   if (showTable) {
                       $("tbody").markup("table/row", {
                           k: i%2,
-                          i: i,
+                          i: i+1,
                           title: data[i].name,
                           date: data[i].start_date_local.substring(0, 10),
                           type: data[i].type,
+                          time: data[i].moving_time.toString().toHHMMSS(),
                           distance: $.number(data[i].distance / 1000, 1, ',', ''),
                           link: "https://www.strava.com/activities/"+data[i].id
                       })
@@ -48,6 +49,7 @@ export default class StravaSeason {
               k: 0,
               title: 'Gesamt',
               date: '',
+              time: '',
               type: 'Swim',
               distance: $.number(sum['Swim'], 1, ',', '')
           })
@@ -56,6 +58,7 @@ export default class StravaSeason {
               k: 0,
               title: 'Gesamt',
               date: '',
+              time: '',
               type: 'Ride',
               distance: $.number(sum['Ride'], 1, ',', '')
           })
@@ -64,6 +67,7 @@ export default class StravaSeason {
               k: 0,
               title: 'Gesamt',
               date: '',
+              time: '',
               type: 'Run',
               distance: $.number(sum['Run'], 1, ',', '')
           })
