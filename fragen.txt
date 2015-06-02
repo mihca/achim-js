@@ -1,6 +1,0 @@
-BGETEM:
-- Warum in BGETEM kein bower?
-- Wo sich ich die verwendeten LIBs?
-
-Mein Beispiel:
-- Wie bekomme ich require im Browser zum Laufen?
