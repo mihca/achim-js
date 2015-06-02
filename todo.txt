@@ -1,0 +1,6 @@
+1. eslint (=> github/rse/asty in eslint.json ecmascript 6 angeben)
+2. jscs (=>asty)
+3. less (=>grunt-contrib-less)
+4. component.js (=>Tutorial)
+ok 5. grunt-contrib-watch
+6. Combobox mit Twitter Bootstrap
