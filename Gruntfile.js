@@ -4,6 +4,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-bower-install-simple");
     grunt.loadNpmTasks("grunt-contrib-connect");
     grunt.loadNpmTasks("grunt-contrib-jshint");
+    grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-browserify");
 
     grunt.initConfig({
@@ -31,6 +32,14 @@ module.exports = function (grunt) {
                     production:  true,
                     directory:   "bower_components"
                 }
+            }
+        },
+        watch: {
+            files: ['*.js'],
+            tasks: ['browserify'],
+            options: {
+                spawn: false,
+                interrupt: true
             }
         },
         connect: {

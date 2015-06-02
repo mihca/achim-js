@@ -1,4 +1,4 @@
-class StravaSeason {
+export default class StravaSeason {
 
   constructor(debug = false){
       this.name = 'Season Wrapper';
@@ -10,17 +10,13 @@ class StravaSeason {
           url: "https://www.strava.com/api/v3/activities?access_token=1a116d53dfe037cedbc5b9c19d173d38afc8435a&per_page=200&after=" + new Date((saison - 1) + '-11-20').getTime() / 1000,
           dataType: "jsonp"
       }).then(function (data) {
-          var h = $("body").markup("table");
-          //$(h).markup("strava/head", { head: ['Name'] })
-          //$(h).markup("strava/head", { head: ['Typ'] })
-          //$(h).markup("strava/head", { head: ['Entfernung'] })
 
           var sum = {};
           var notBefore = new Date((saison - 1) + '-11-20');
-          // var notAfter = new Date(saison + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate());
-          var notAfter = new Date(saison + '-07-13');
+          var notAfter = new Date(saison + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate());
+          // var notAfter = new Date(saison + '-07-13');
 
-          $(h).markup("table/range", {
+          $("body").markup("table", {
               range_from: notBefore.toLocaleDateString(),
               range_to: notAfter.toLocaleDateString()
           })
@@ -30,7 +26,7 @@ class StravaSeason {
               var activityDate = new Date(data[i].start_date_local.substring(0, 10));
               if (activityDate < notAfter) {
                   if (showTable) {
-                      $(h).markup("table/row", {
+                      $("tbody").markup("table/row", {
                           k: i%2,
                           i: i,
                           title: data[i].name,
@@ -47,7 +43,7 @@ class StravaSeason {
               }
           }
 
-          $(h).markup("table/row", {
+          $("tbody").markup("table/row", {
               i: saison,
               k: 0,
               title: 'Gesamt',
@@ -55,7 +51,7 @@ class StravaSeason {
               type: 'Swim',
               distance: $.number(sum['Swim'], 1, ',', '')
           })
-          $(h).markup("table/row", {
+          $("tbody").markup("table/row", {
               i: saison,
               k: 0,
               title: 'Gesamt',
@@ -63,7 +59,7 @@ class StravaSeason {
               type: 'Ride',
               distance: $.number(sum['Ride'], 1, ',', '')
           })
-          $(h).markup("table/row", {
+          $("tbody").markup("table/row", {
               i: saison,
               k: 0,
               title: 'Gesamt',
@@ -82,5 +78,3 @@ class StravaSeason {
       });
   }
 }
-
-module.exports = StravaSeason;

@@ -26,14 +26,14 @@ import StravaSeason from "./season"
                 return new Promise((resolve, reject) => {
                     stravaSeason.calYear(year, details, resolve, reject)
                 })
-            }
+            };
 
             Promise.all([
                 fetchPromised(2013, true),
                 fetchPromised(2014, true),
                 fetchPromised(2015, true)
-            ]).then((data) => {
-                let [ sum2013, sum2014, sum2015 ] = data
+            ]).then(([ sum2013, sum2014, sum2015 ]) => {
+                // let [ sum2013, sum2014, sum2015 ] = data
                 $("body").markup("chart", {
                     title: "Disciplines",
                     chart_type: 'line',
